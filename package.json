@@ -1,0 +1,11 @@
+{
+  "name": "erd-to-classes-and-oop",
+  "version": "1.0.0",
+  "description": "This is assign ment related to converting ERD to classes in js. Also learning js OOP concepts",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atharva",
+  "license": "ISC"
+}
