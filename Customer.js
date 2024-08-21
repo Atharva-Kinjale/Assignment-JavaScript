@@ -1,3 +1,4 @@
+const data = require("./data");
 const User = require("./User");
 
 class Customer extends User {
@@ -22,6 +23,19 @@ class Customer extends User {
         this.lastName
       }`
     );
+  }
+
+  displayInfo() {
+    console.log(`User: ${this.firstName} ${this.lastName} 
+        customerId: ${this.#customerId}
+         Contact: ${this.contactNo}`);
+  }
+  //   polymorphism
+  getInfoById(id) {
+    let customer = data.customers.find((c) => c.customerId === id);
+    // console.log(`Car names: ${cars.carId}`);
+    // console.log(customer);
+    return new Customer(...Object.values(customer));
   }
 }
 

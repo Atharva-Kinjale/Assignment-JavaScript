@@ -1,3 +1,4 @@
+const data = require("./data");
 class Car {
   #carId; // Private property
   #price; // Private property
@@ -35,6 +36,12 @@ class Car {
         this.isAvailable
       }`
     );
+  }
+  displayCars(CId) {
+    let cars = data.cars.find((car) => car.carId === CId);
+    // console.log(`Car names: ${cars.carId}`);
+    console.log(cars);
+    return new Car(...Object.values(cars));
   }
 }
 

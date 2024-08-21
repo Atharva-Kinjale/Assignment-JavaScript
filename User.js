@@ -1,3 +1,4 @@
+const data = require("./data");
 class User {
   #id; // Private property
   #contactNo; // Private property
@@ -25,8 +26,14 @@ class User {
       `User: ${this.firstName} ${this.lastName}, Contact: ${this.#contactNo}`
     );
   }
+  //   polymorphism
+  displayInfo() {
+    console.log(
+      `User: ${this.firstName} ${this.lastName}, Contact: ${this.#contactNo}`
+    );
+  }
 
-  static getUserByID(id) {
+  getInfoByID(id) {
     // const user = data.users.find((user) => user.id === id);
 
     const user = data.users.find((user) => user.id === id);
@@ -37,5 +44,6 @@ class User {
     // return user;
   }
 }
+// console.log(User.getUserByID(1));
 
 module.exports = User;

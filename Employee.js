@@ -1,4 +1,6 @@
 const User = require("./User");
+const data = require("./data");
+
 class Employee extends User {
   #empId; // Private property
   #salary; // Private property
@@ -35,4 +37,18 @@ class Employee extends User {
       }`
     );
   }
+  //   polymorphism
+  getInfoByID(id) {
+    console.log("call from emp");
+    // console.log(`User: ${this.firstName} ${this.lastName},
+    //     employeeId: ${this.empId},
+    //      Contact: ${this.contactNo}`);
+
+    let employee = data.employees.find((x) => x.empId == id);
+    // console.log("log", employee);
+
+    return new Employee(...Object.values(employee));
+  }
 }
+
+module.exports = Employee;

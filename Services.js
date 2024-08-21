@@ -28,7 +28,22 @@ class Service {
   }
 
   displayServiceInfo() {
+    console.log(
+      `Service: ${this.serviceName}, Cost: ${this.#cost},description :${
+        this.description
+      },time required:${this.timeRequired}`
+    );
+  }
+  //   polymorphism overloading just for study purpose
+  getServiceInfo(serviceId) {
     console.log(`Service: ${this.serviceName}, Cost: ${this.#cost}`);
+  }
+  getServiceInfo(serviceId, location) {
+    console.log(
+      `Service: ${this.serviceName}, Cost: ${this.#cost},location:${
+        this.locationId
+      }`
+    );
   }
 }
 module.exports = Service;
